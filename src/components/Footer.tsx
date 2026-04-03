@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { SOCIAL_LINKS } from '@/lib/constants';
 
 const FacebookIcon = () => (
   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -29,7 +30,7 @@ export default function Footer() {
         {/* Social icons */}
         <div className="flex items-center gap-4">
           <Link
-            href="https://facebook.com"
+            href={SOCIAL_LINKS.facebook}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook skupiny Voňavý dotek"
@@ -38,7 +39,7 @@ export default function Footer() {
             <FacebookIcon />
           </Link>
           <Link
-            href="https://instagram.com"
+            href={SOCIAL_LINKS.instagram}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram Voňavý dotek"

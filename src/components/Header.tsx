@@ -4,7 +4,20 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSegment, setActiveSegment] = useState('hero');
+
+  // Prevent scrolling when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
 
   useEffect(() => {
     const sections = ['hero', 'produkty', 'pribeh', 'kontakt'];
@@ -66,10 +79,39 @@ export default function Header() {
           })}
         </nav>
         
-        {/* Mobile menu wrapper */}
-        <div className="md:hidden flex flex-col gap-1.5 p-2 cursor-pointer bg-white/50 backdrop-blur-md rounded-full border border-stone-200/50">
-          <div className="w-5 h-[1.5px] bg-stone-800"></div>
-          <div className="w-3 h-[1.5px] bg-stone-800 self-end"></div>
+        {/* Mobile menu button */}
+        <button 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden relative z-[110] flex flex-col items-end gap-1.5 p-3 h-11 w-11 justify-center bg-white/80 backdrop-blur-md rounded-full border border-stone-200/50 shadow-sm outline-none group"
+          aria-label={isMenuOpen ? "Zavřít menu" : "Otevřít menu"}
+        >
+          <div className={`h-[1.5px] bg-stone-800 transition-all duration-300 ${isMenuOpen ? 'w-6 rotate-45 translate-y-[4.5px]' : 'w-5'}`}></div>
+          <div className={`h-[1.5px] bg-stone-800 transition-all duration-300 ${isMenuOpen ? 'w-0 opacity-0' : 'w-3'}`}></div>
+          <div className={`h-[1.5px] bg-stone-800 transition-all duration-300 ${isMenuOpen ? 'w-6 -rotate-45 -translate-y-[4.5px]' : 'w-4'}`}></div>
+        </button>
+
+        {/* Mobile Menu Overlay */}
+        <div className={`fixed inset-0 bg-[#FDFBF7] z-[105] transition-all duration-500 ease-in-out md:hidden flex flex-col items-center justify-center ${
+          isMenuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-full pointer-events-none'
+        }`}>
+          <div className="flex flex-col items-center gap-8 text-center p-6">
+            <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-stone-400 mb-4 bg-stone-100/50 px-4 py-1.5 rounded-full">Menu</span>
+            {navLinks.map((link) => (
+              <Link 
+                key={link.path} 
+                href={link.path}
+                onClick={() => setIsMenuOpen(false)}
+                className="text-4xl font-serif text-stone-900 hover:text-olive-900 transition-all hover:italic tracking-tight"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          
+          <div className="absolute bottom-12 left-0 w-full flex flex-col items-center gap-4 px-6 md:px-0">
+             <div className="w-12 h-[1px] bg-stone-200"></div>
+             <p className="text-stone-500 text-sm font-light">voňavý dotek &copy; 2024</p>
+          </div>
         </div>
       </div>
     </header>

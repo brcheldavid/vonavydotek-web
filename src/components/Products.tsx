@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { SOCIAL_LINKS } from '@/lib/constants';
 
 const PRODUCTS = [
   {
@@ -83,7 +84,7 @@ export default function Products() {
 
               {/* CTA */}
               <Link
-                href="https://facebook.com"
+                href={SOCIAL_LINKS.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-5 text-xs font-bold uppercase tracking-widest text-[#A3B18A] border-b border-[#A3B18A]/40 hover:border-[#A3B18A] pb-0.5 transition-colors duration-200"

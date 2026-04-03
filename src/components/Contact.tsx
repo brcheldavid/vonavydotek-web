@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { SOCIAL_LINKS } from '@/lib/constants';
+import EmailSubscriptionForm from './EmailSubscriptionForm';
 
 const FacebookIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -45,16 +47,11 @@ export default function Contact() {
             </div>
             
             {/* Hero Style Subscription Form */}
-            <div className="bg-white rounded-full p-[4px] flex items-center shadow-sm border border-stone-200/50 w-full z-30">
-               <input 
-                 type="email" 
-                 placeholder="Váš e-mail pro novinky" 
-                 className="bg-transparent outline-none px-5 py-3 w-full text-sm text-stone-700 placeholder-stone-400" 
-               />
-               <button className="bg-[#A3B18A] text-white px-8 py-3 rounded-full text-xs font-bold tracking-wide hover:opacity-90 transition-all shrink-0">
-                 Odebírat
-               </button>
-            </div>
+            <EmailSubscriptionForm 
+              variant="hero" 
+              placeholder="Váš e-mail pro novinky" 
+              buttonText="Odebírat" 
+            />
           </div>
 
           {/* 3. Divider & FB Section (Right side grouping) */}
@@ -71,7 +68,7 @@ export default function Contact() {
                 Nahlédněte za oponu v naší FB skupině — zákulisí výroby a nové várky.
               </p>
               <Link
-                href="https://facebook.com"
+                href={SOCIAL_LINKS.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 py-3.5 bg-white border border-[#A3B18A]/30 text-[#A3B18A] font-bold tracking-wider uppercase text-[11px] rounded-full shadow-sm hover:bg-[#A3B18A] hover:text-white transition-all duration-300"

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Leaf } from 'lucide-react';
+import { SOCIAL_LINKS } from '@/lib/constants';
 
 export default function Story() {
   return (
@@ -14,11 +15,11 @@ export default function Story() {
           <div className="flex flex-col md:flex-row items-center w-full relative z-20">
              {/* Left: Text */}
              <div className="w-full md:w-1/2 flex justify-start md:pr-24 lg:pr-32">
-                <div className="bg-[#FDFBF7] relative z-20 p-6 md:p-12 -ml-6 md:-ml-12 w-[calc(100%+3rem)] md:w-[calc(100%+6rem)] max-w-[560px] rounded-[2rem]">
-                   <h3 className="font-serif italic text-3xl md:text-[2.25rem] text-stone-900 leading-[1.1] mb-8 border-b border-[#A3B18A]/40 pb-3 inline-flex items-center">
-                     <span className="text-[#8C76AC] not-italic font-light text-base md:text-xl uppercase tracking-widest whitespace-nowrap">První krok</span>
-                     <Leaf className="w-5 h-5 text-[#A3B18A] opacity-60 mx-6 shrink-0" />
-                     <span className="whitespace-nowrap">Moje zahrádka</span>
+                <div className="bg-[#FDFBF7] relative z-20 p-6 md:p-12 md:-ml-12 w-full md:w-[calc(100%+6rem)] max-w-[560px] rounded-[2rem]">
+                   <h3 className="font-serif italic text-3xl md:text-[2.25rem] text-stone-900 leading-[1.1] mb-8 border-b border-[#A3B18A]/40 pb-3 inline-flex flex-wrap items-center">
+                     <span className="text-[#8C76AC] not-italic font-light text-base md:text-xl uppercase tracking-widest whitespace-nowrap mr-4">První krok</span>
+                     <Leaf className="w-5 h-5 text-[#A3B18A] opacity-60 mr-4 md:mx-6 shrink-0" />
+                     <span className="whitespace-nowrap md:whitespace-nowrap">Moje zahrádka</span>
                    </h3>
                    <ul className="text-stone-700 font-light leading-relaxed flex flex-col gap-6 text-base md:text-lg">
                      <li className="flex gap-4 items-start">
@@ -83,10 +84,10 @@ export default function Story() {
 
              {/* Right: Text (Posunutý dolů pod fotku) */}
              <div className="w-full md:w-1/2 flex justify-end md:pl-24 lg:pl-32 mb-12 md:mb-0 md:mt-32">
-                <div className="bg-[#FDFBF7] relative z-20 p-6 md:p-12 -mr-6 md:-mr-12 w-[calc(100%+3rem)] md:w-[calc(100%+6rem)] max-w-[560px] rounded-[2rem]">
-                   <h3 className="font-serif italic text-3xl md:text-[2.25rem] text-stone-900 leading-[1.1] mb-8 border-b border-[#A3B18A]/40 pb-3 inline-flex items-center">
-                     <span className="text-[#8C76AC] not-italic font-light text-base md:text-xl uppercase tracking-widest whitespace-nowrap">Druhý krok</span>
-                     <Leaf className="w-5 h-5 text-[#A3B18A] opacity-60 mx-6 shrink-0" />
+                <div className="bg-[#FDFBF7] relative z-20 p-6 md:p-12 md:-mr-12 w-full md:w-[calc(100%+6rem)] max-w-[560px] rounded-[2rem]">
+                   <h3 className="font-serif italic text-3xl md:text-[2.25rem] text-stone-900 leading-[1.1] mb-8 border-b border-[#A3B18A]/40 pb-3 inline-flex flex-wrap items-center">
+                     <span className="text-[#8C76AC] not-italic font-light text-base md:text-xl uppercase tracking-widest whitespace-nowrap mr-4">Druhý krok</span>
+                     <Leaf className="w-5 h-5 text-[#A3B18A] opacity-60 mr-4 md:mx-6 shrink-0" />
                      <span className="whitespace-nowrap">Laskavý sběr</span>
                    </h3>
                    <ul className="text-stone-700 font-light leading-relaxed flex flex-col gap-6 text-base md:text-lg">
@@ -119,10 +120,10 @@ export default function Story() {
           <div className="flex flex-col md:flex-row items-center w-full relative z-20">
              {/* Left: Text */}
              <div className="w-full md:w-1/2 flex justify-start md:pr-24 lg:pr-32 mb-16 md:mb-0 md:mt-16">
-                <div className="bg-[#FDFBF7] relative z-20 p-6 md:p-12 -ml-6 md:-ml-12 w-[calc(100%+3rem)] md:w-[calc(100%+6rem)] max-w-[560px] rounded-[2rem]">
-                   <h3 className="font-serif italic text-3xl md:text-[2.25rem] text-stone-900 leading-[1.1] mb-8 border-b border-[#A3B18A]/40 pb-3 inline-flex items-center">
-                     <span className="text-[#8C76AC] not-italic font-light text-base md:text-xl uppercase tracking-widest whitespace-nowrap">Třetí krok</span>
-                     <Leaf className="w-5 h-5 text-[#A3B18A] opacity-60 mx-6 shrink-0" />
+                <div className="bg-[#FDFBF7] relative z-20 p-6 md:p-12 md:-ml-12 w-full md:w-[calc(100%+6rem)] max-w-[560px] rounded-[2rem]">
+                   <h3 className="font-serif italic text-3xl md:text-[2.25rem] text-stone-900 leading-[1.1] mb-8 border-b border-[#A3B18A]/40 pb-3 inline-flex flex-wrap items-center">
+                     <span className="text-[#8C76AC] not-italic font-light text-base md:text-xl uppercase tracking-widest whitespace-nowrap mr-4">Třetí krok</span>
+                     <Leaf className="w-5 h-5 text-[#A3B18A] opacity-60 mr-4 md:mx-6 shrink-0" />
                      <span className="whitespace-nowrap">Pravdivý dotek</span>
                    </h3>
                    <ul className="text-stone-700 font-light leading-relaxed flex flex-col gap-6 text-base md:text-lg">
@@ -170,7 +171,7 @@ export default function Story() {
              Líbí se vám tato cesta? Přidejte se k nám do FB skupiny a buďte u toho, až vykvete další várka.
            </p>
            <Link 
-              href="https://facebook.com" 
+              href={SOCIAL_LINKS.facebook} 
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-10 py-4 lg:px-12 lg:py-5 bg-[#A3B18A] text-white text-[15px] font-bold tracking-wider uppercase hover:opacity-90 transition-all duration-300 rounded-full shadow-lg shrink-0 hover:-translate-y-1"

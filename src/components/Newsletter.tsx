@@ -1,3 +1,5 @@
+import EmailSubscriptionForm from './EmailSubscriptionForm';
+
 export default function Newsletter() {
   return (
     <section className="w-full py-20 lg:py-24 bg-[#EFECE5]">
@@ -17,20 +19,11 @@ export default function Newsletter() {
           
           {/* Form */}
           <div className="w-full max-w-md pt-2">
-            <div className="bg-white rounded-full p-1.5 flex items-center shadow-sm border border-stone-200/50 w-full transition-shadow duration-300 hover:shadow-md focus-within:shadow-md">
-              <input 
-                type="email" 
-                placeholder="Váš e-mail" 
-                className="bg-transparent outline-none px-6 py-3 w-full text-base text-stone-700 placeholder-stone-400 font-medium" 
-                required
-              />
-              <button 
-                type="submit"
-                className="bg-[#A3B18A] text-white px-8 py-3.5 rounded-full text-sm font-bold tracking-wide hover:opacity-90 transition-all shrink-0 shadow-sm"
-              >
-                Chci být u toho
-              </button>
-            </div>
+            <EmailSubscriptionForm 
+              variant="newsletter" 
+              placeholder="Váš e-mail" 
+              buttonText="Chci být u toho" 
+            />
           </div>
 
         </div>

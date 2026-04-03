@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Globe, Share2, Music } from 'lucide-react';
+import EmailSubscriptionForm from './EmailSubscriptionForm';
 
 export default function Hero() {
   return (
@@ -37,12 +38,11 @@ export default function Hero() {
                 <span className="text-xs uppercase tracking-widest font-bold text-stone-500">
                   Objevte tajemství přírody
                 </span>
-                <div className="bg-white rounded-full p-[4px] flex items-center shadow-sm border border-stone-200/50 w-full">
-                  <input type="email" placeholder="Zadejte svůj e-mail pro tipy a novinky" className="bg-transparent outline-none px-5 py-2.5 w-full text-sm text-stone-700 placeholder-stone-400" />
-                  <button className="bg-[#A3B18A] text-white px-8 py-2.5 rounded-full text-xs font-bold tracking-wide hover:opacity-90 transition-all shrink-0">
-                    Odebírat
-                  </button>
-                </div>
+                <EmailSubscriptionForm 
+                  variant="hero" 
+                  placeholder="Zadejte svůj e-mail pro tipy a novinky" 
+                  buttonText="Odebírat" 
+                />
             </div>
           </div>
 
@@ -60,45 +60,45 @@ export default function Hero() {
                 {/* --- FLOATING PINS (New Clean Style from Images) --- */}
                 
                 {/* 1. Mýdla (Top Right) */}
-                <Link href="#produkty" className="absolute top-[8%] -right-8 animate-float-slow group z-30 flex flex-col items-center gap-1">
-                   <div className="flex items-center gap-3">
-                     <div className="w-8 h-8 rounded-full bg-[#A3B18A] text-white flex items-center justify-center text-2xl font-light shadow-md hover:scale-110 transition-transform">+</div>
-                     <img src="/mýdlo.png" alt="mýdla" className="w-[4.5rem] h-[4.5rem] object-contain drop-shadow-md hover:scale-105 transition-transform" />
+                <Link href="#produkty" className="absolute top-[5%] -right-4 md:-right-8 animate-float-slow group z-30 flex flex-col items-center gap-1 scale-[0.8] md:scale-100">
+                   <div className="flex items-center gap-2 md:gap-3">
+                     <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-[#A3B18A] text-white flex items-center justify-center text-xl md:text-2xl font-light shadow-md hover:scale-110 transition-transform">+</div>
+                     <img src="/mydlo.png" alt="mýdla" className="w-[3.5rem] md:w-[4.5rem] h-[3.5rem] md:h-[4.5rem] object-contain drop-shadow-md hover:scale-105 transition-transform" />
                    </div>
-                   <div className="px-5 py-2.5 bg-[#f4f2ea] rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.06)] text-stone-800 text-lg whitespace-nowrap relative -top-2">
+                   <div className="px-4 py-2 md:px-5 md:py-2.5 bg-[#f4f2ea] rounded-full shadow-sm text-stone-800 text-sm md:text-lg whitespace-nowrap relative -top-1 md:-top-2">
                      mýdla
                    </div>
                 </Link>
 
                 {/* 2. Svíčky (Bottom Right) */}
-                <Link href="#produkty" className="absolute bottom-[5%] -right-8 animate-float-delayed group z-30 flex flex-col items-center gap-1">
-                   <div className="flex items-center gap-3">
-                     <div className="w-8 h-8 rounded-full bg-[#A3B18A] text-white flex items-center justify-center text-2xl font-light shadow-md hover:scale-110 transition-transform">+</div>
-                     <img src="/svicka.png" alt="svíčky" className="w-[4.5rem] h-[4.5rem] object-contain drop-shadow-md hover:scale-105 transition-transform" />
+                <Link href="#produkty" className="absolute bottom-[8%] -right-4 md:-right-8 animate-float-delayed group z-30 flex flex-col items-center gap-1 scale-[0.8] md:scale-100">
+                   <div className="flex items-center gap-2 md:gap-3">
+                     <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-[#A3B18A] text-white flex items-center justify-center text-xl md:text-2xl font-light shadow-md hover:scale-110 transition-transform">+</div>
+                     <img src="/svicka.png" alt="svíčky" className="w-[3.5rem] md:w-[4.5rem] h-[3.5rem] md:h-[4.5rem] object-contain drop-shadow-md hover:scale-105 transition-transform" />
                    </div>
-                   <div className="px-5 py-2.5 bg-[#f4f2ea] rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.06)] text-stone-800 text-lg whitespace-nowrap relative -top-2">
+                   <div className="px-4 py-2 md:px-5 md:py-2.5 bg-[#f4f2ea] rounded-full shadow-sm text-stone-800 text-sm md:text-lg whitespace-nowrap relative -top-1 md:-top-2">
                      svíčky
                    </div>
                 </Link>
 
                 {/* 3. Krémy (Bottom Left) */}
-                <Link href="#produkty" className="absolute bottom-[2%] -left-16 animate-float group z-30 flex flex-col items-center gap-1">
-                   <div className="flex items-center gap-3">
-                     <div className="w-8 h-8 rounded-full bg-[#A3B18A] text-white flex items-center justify-center text-2xl font-light shadow-md hover:scale-110 transition-transform">+</div>
-                     <img src="/krem.png" alt="krémy" className="w-[4.5rem] h-[4.5rem] object-contain drop-shadow-md hover:scale-105 transition-transform" />
+                <Link href="#produkty" className="absolute bottom-[5%] -left-8 md:-left-16 animate-float group z-30 flex flex-col items-center gap-1 scale-[0.8] md:scale-100">
+                   <div className="flex items-center gap-2 md:gap-3">
+                     <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-[#A3B18A] text-white flex items-center justify-center text-xl md:text-2xl font-light shadow-md hover:scale-110 transition-transform">+</div>
+                     <img src="/krem.png" alt="krémy" className="w-[3.5rem] md:w-[4.5rem] h-[3.5rem] md:h-[4.5rem] object-contain drop-shadow-md hover:scale-105 transition-transform" />
                    </div>
-                   <div className="px-5 py-2.5 bg-[#f4f2ea] rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.06)] text-stone-800 text-lg whitespace-nowrap relative -top-2">
+                   <div className="px-4 py-2 md:px-5 md:py-2.5 bg-[#f4f2ea] rounded-full shadow-sm text-stone-800 text-sm md:text-lg whitespace-nowrap relative -top-1 md:-top-2">
                      krémy
                    </div>
                 </Link>
 
                 {/* 4. Balíček (Top Left) */}
-                <Link href="#produkty" className="absolute top-[10%] -left-12 animate-float group z-30 flex flex-col items-center gap-1">
-                   <div className="flex items-center gap-3">
-                     <div className="w-8 h-8 rounded-full bg-[#A3B18A] text-white flex items-center justify-center text-2xl font-light shadow-md hover:scale-110 transition-transform">+</div>
-                     <img src="/balicek.png" alt="balíček" className="w-[4.5rem] h-[4.5rem] object-contain drop-shadow-md hover:scale-105 transition-transform" />
+                <Link href="#produkty" className="absolute top-[8%] -left-4 md:-left-12 animate-float group z-30 flex flex-col items-center gap-1 scale-[0.8] md:scale-100">
+                   <div className="flex items-center gap-2 md:gap-3">
+                     <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-[#A3B18A] text-white flex items-center justify-center text-xl md:text-2xl font-light shadow-md hover:scale-110 transition-transform">+</div>
+                     <img src="/balicek.png" alt="balíček" className="w-[3.5rem] md:w-[4.5rem] h-[3.5rem] md:h-[4.5rem] object-contain drop-shadow-md hover:scale-105 transition-transform" />
                    </div>
-                   <div className="px-5 py-2.5 bg-[#f4f2ea] rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.06)] text-stone-800 text-lg whitespace-nowrap relative -top-2">
+                   <div className="px-4 py-2 md:px-5 md:py-2.5 bg-[#f4f2ea] rounded-full shadow-sm text-stone-800 text-sm md:text-lg whitespace-nowrap relative -top-1 md:-top-2">
                      balíček
                    </div>
                 </Link>
