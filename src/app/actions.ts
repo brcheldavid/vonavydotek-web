@@ -13,6 +13,27 @@ export async function subscribeToNewsletter(formData: FormData) {
   }
 
   try {
+    // 1. Přidání do MailerLite
+    try {
+      const mlResponse = await fetch('https://connect.mailerlite.com/api/subscribers', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${process.env.MAILERLITE_API_KEY}`,
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!mlResponse.ok) {
+        const mlError = await mlResponse.json();
+        console.error('MailerLite error:', mlError);
+      }
+    } catch (mlErr) {
+      console.error('MailerLite connection error:', mlErr);
+    }
+
+    // 2. Odeslání e-mailového oznámení (Resend)
     const { data, error } = await resend.emails.send({
       from: 'Voňavý Dotek <onboarding@resend.dev>', // Default from Resend for testing
       to: [CONTACT_INFO.email],
